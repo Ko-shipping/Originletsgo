@@ -1156,11 +1156,18 @@
   </header>
 
   <div class="whatsapp-invite reveal">
-    <a href="https://chat.whatsapp.com/FDd78udHVJsA8fSDKu64G4" target="_blank" rel="noopener" class="whatsapp-btn">
-      <span class="wa-icon">💬</span>
-      <span class="wa-text">Join the tribe on WhatsApp</span>
-      <span class="wa-arrow">→</span>
-    </a>
+    <div style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;">
+      <a href="#" id="whatsapp-vip-btn" class="whatsapp-btn" style="background: linear-gradient(135deg, rgba(232, 90, 122, 0.15), rgba(232, 90, 122, 0.05)); border-color: rgba(232, 90, 122, 0.3); color: var(--proteaglow);">
+        <span class="wa-icon">💬</span>
+        <span class="wa-text">VIP Tribe</span>
+        <span class="wa-arrow">→</span>
+      </a>
+      <a href="https://chat.whatsapp.com/CfkncwXUrIa1SL14RxFjGH" target="_blank" rel="noopener" class="whatsapp-btn">
+        <span class="wa-icon">💬</span>
+        <span class="wa-text">General Group</span>
+        <span class="wa-arrow">→</span>
+      </a>
+    </div>
   </div>
 
   <div class="countdown-wrap reveal">
@@ -1358,6 +1365,7 @@
       <li data-key="sunscreen">Sunscreen + sun hat</li>
       <li data-key="cash">Cash for traders</li>
       <li data-key="firstaid">Mini first aid kit</li>
+      <li data-key="psycare">Find the PsyCare welfare tent on arrival</li>
     </ul>
   </section>
 
@@ -1980,6 +1988,23 @@ const $slangList = document.getElementById('slang-list');
 $slangToggle.addEventListener('click', () => {
   $slangToggle.classList.toggle('open');
   $slangList.classList.toggle('open');
+});
+
+/* ═══════════════════════════════════════════════════════════════════
+   WHATSAPP PASSWORD PROTECTION
+   ═══════════════════════════════════════════════════════════════════ */
+
+const WHATSAPP_VIP_PASSWORD = 'poes';
+const WHATSAPP_VIP_LINK = 'https://chat.whatsapp.com/FDd78udHVJsA8fSDKu64G4';
+
+document.getElementById('whatsapp-vip-btn').addEventListener('click', (e) => {
+  e.preventDefault();
+  const password = prompt('Enter the password to join the VIP tribe:');
+  if (password === WHATSAPP_VIP_PASSWORD) {
+    window.open(WHATSAPP_VIP_LINK, '_blank');
+  } else if (password !== null) {
+    alert('❌ Wrong password. Try again.');
+  }
 });
 </script>
 
