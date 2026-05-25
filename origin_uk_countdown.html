@@ -1,0 +1,1987 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Origin Festival UK 2026 — Countdown</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-deep:      #1a0d1f;
+    --bg-mid:       #2d1424;
+    --bg-soft:      #4a1d2a;
+    --ink:          #fdf3d8;
+    --ink-soft:     #e8c89c;
+    --ink-dim:      #a08560;
+    --proteapink:   #e85a7a;
+    --proteaglow:   #ff7d9e;
+    --ochre:        #d68b3e;
+    --ochreglow:    #f2a85a;
+    --rooibos:      #a8442a;
+    --acacia:       #c97b3d;
+    --baobab:       #6d4226;
+    --bone:         #fdf3d8;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { overflow-x: hidden; }
+
+  body {
+    font-family: 'Outfit', sans-serif;
+    background: var(--bg-deep);
+    color: var(--ink);
+    min-height: 100vh;
+    line-height: 1.6;
+    position: relative;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 100% 50% at 50% 100%, rgba(232, 90, 122, 0.18) 0%, transparent 50%),
+      radial-gradient(ellipse 80% 40% at 50% 90%, rgba(214, 139, 62, 0.22) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 30% at 50% 80%, rgba(168, 68, 42, 0.15) 0%, transparent 60%),
+      linear-gradient(180deg, #1a0d1f 0%, #2d1424 60%, #4a1d2a 100%);
+    z-index: -2;
+    pointer-events: none;
+  }
+
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+    opacity: 0.05;
+    z-index: -1;
+    pointer-events: none;
+    mix-blend-mode: overlay;
+  }
+
+  .ember {
+    position: fixed;
+    width: 3px;
+    height: 3px;
+    background: var(--ochreglow);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--ochre);
+    opacity: 0;
+    animation: rise linear infinite;
+    pointer-events: none;
+    z-index: 0;
+  }
+  @keyframes rise {
+    0%   { transform: translateY(100vh) translateX(0); opacity: 0; }
+    10%  { opacity: 0.8; }
+    90%  { opacity: 0.4; }
+    100% { transform: translateY(-10vh) translateX(40px); opacity: 0; }
+  }
+
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 32px 20px 80px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero { text-align: center; padding: 24px 0 40px; }
+
+  .hero .eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--proteaglow);
+    margin-bottom: 18px;
+    font-weight: 600;
+  }
+
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: clamp(44px, 11vw, 76px);
+    line-height: 0.95;
+    color: var(--bone);
+    letter-spacing: -0.02em;
+  }
+  .hero h1 em { font-style: italic; color: var(--ochreglow); font-weight: 400; }
+
+  .hero .meta {
+    margin-top: 22px;
+    font-size: 13px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  .hero .meta .dot { color: var(--proteapink); margin: 0 10px; }
+
+  .origin-tag {
+    display: inline-block;
+    margin-top: 18px;
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--ochreglow);
+    padding: 6px 14px;
+    border: 1px solid rgba(242, 168, 90, 0.3);
+    border-radius: 100px;
+    background: rgba(214, 139, 62, 0.08);
+  }
+  .origin-tag .flag { letter-spacing: 0; margin-right: 6px; }
+
+  .sigil {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin: 28px 0;
+    color: var(--ink-dim);
+  }
+  .sigil::before,
+  .sigil::after {
+    content: '';
+    flex: 1;
+    max-width: 80px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--ink-dim), transparent);
+  }
+  .sigil-mark { font-size: 18px; color: var(--ochre); }
+
+  /* ── WHATSAPP INVITE ── */
+  .whatsapp-invite {
+    margin: 16px 0 24px;
+    text-align: center;
+  }
+  .whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: linear-gradient(135deg, rgba(37, 211, 102, 0.15), rgba(37, 211, 102, 0.05));
+    border: 1px solid rgba(37, 211, 102, 0.3);
+    color: #25d366;
+    padding: 12px 20px;
+    border-radius: 100px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+    cursor: pointer;
+  }
+  .whatsapp-btn:hover {
+    background: linear-gradient(135deg, rgba(37, 211, 102, 0.25), rgba(37, 211, 102, 0.1));
+    border-color: rgba(37, 211, 102, 0.5);
+    transform: translateY(-2px);
+  }
+  .whatsapp-btn:active { transform: translateY(0); }
+  .wa-icon { font-size: 16px; }
+  .wa-text { display: inline-block; }
+  .wa-arrow { font-size: 14px; opacity: 0.7; }
+  .whatsapp-btn:hover .wa-arrow { opacity: 1; transform: translateX(2px); transition: all 0.2s ease; }
+
+  /* ── ARTIST ACTION MODAL ── */
+  .artist-modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.2s ease;
+  }
+  .artist-modal-overlay.show { display: flex; }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+  .artist-modal {
+    background: var(--bg-soft);
+    border: 1px solid rgba(242, 168, 90, 0.3);
+    border-radius: 8px;
+    padding: 32px 24px;
+    max-width: 320px;
+    text-align: center;
+    animation: slideUp 0.3s ease;
+  }
+  @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+  .artist-modal .name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    color: var(--bone);
+    margin-bottom: 6px;
+    font-style: italic;
+  }
+  .artist-modal .label {
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+    margin-bottom: 20px;
+  }
+  .artist-modal .actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .artist-modal .btn {
+    width: 100%;
+  }
+
+  /* ── SA SLANG & LINGO ── */
+  .slang-toggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(74, 29, 42, 0.3);
+    border: 1px solid rgba(242, 168, 90, 0.2);
+    padding: 16px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.2s ease;
+    margin-bottom: 16px;
+  }
+  .slang-toggle:hover {
+    background: rgba(74, 29, 42, 0.4);
+    border-color: rgba(242, 168, 90, 0.3);
+  }
+  .slang-toggle-text {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ochreglow);
+  }
+  .slang-toggle-icon {
+    font-size: 16px;
+    color: var(--ochreglow);
+    transition: transform 0.3s ease;
+  }
+  .slang-toggle.open .slang-toggle-icon {
+    transform: rotate(180deg);
+  }
+
+  .slang-list {
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+  .slang-list.open {
+    display: flex;
+    max-height: 2000px;
+    opacity: 1;
+  }
+
+  .slang-item {
+    background: rgba(74, 29, 42, 0.25);
+    border-left: 2px solid var(--ochre);
+    padding: 12px 16px;
+    border-radius: 0 6px 6px 0;
+    animation: slideDown 0.3s ease;
+  }
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .slang-word {
+    font-family: 'Outfit', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ochreglow);
+    margin-bottom: 4px;
+  }
+  .slang-def {
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.5;
+  }
+
+  .countdown-wrap {
+    background: linear-gradient(180deg, rgba(74, 29, 42, 0.4) 0%, rgba(26, 13, 31, 0.6) 100%);
+    border: 1px solid rgba(242, 168, 90, 0.18);
+    border-radius: 4px;
+    padding: 36px 20px;
+    margin: 32px 0;
+    position: relative;
+    backdrop-filter: blur(6px);
+  }
+  .countdown-wrap::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: 4px;
+    padding: 1px;
+    background: linear-gradient(180deg, var(--proteapink) 0%, transparent 30%, transparent 70%, var(--ochre) 100%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  .countdown-label {
+    text-align: center;
+    font-size: 10px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+    margin-bottom: 24px;
+  }
+
+  .countdown {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+  }
+
+  .unit { text-align: center; padding: 14px 4px; }
+
+  .unit .num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 11vw, 64px);
+    font-weight: 400;
+    color: var(--bone);
+    line-height: 1;
+    display: block;
+    text-shadow: 0 0 30px rgba(242, 168, 90, 0.18);
+  }
+  .unit .num.flash { animation: pulseGlow 0.4s ease-out; }
+  @keyframes pulseGlow {
+    0%   { text-shadow: 0 0 30px rgba(242, 168, 90, 0.18); }
+    50%  { text-shadow: 0 0 30px rgba(242, 168, 90, 0.8), 0 0 50px rgba(232, 90, 122, 0.4); }
+    100% { text-shadow: 0 0 30px rgba(242, 168, 90, 0.18); }
+  }
+
+  .unit .lbl {
+    display: block;
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-top: 10px;
+  }
+
+  .countdown-footer {
+    text-align: center;
+    margin-top: 24px;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    color: var(--proteaglow);
+    font-style: italic;
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  section { margin: 56px 0; }
+
+  h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: 32px;
+    color: var(--bone);
+    margin-bottom: 6px;
+  }
+  h2 em { color: var(--ochreglow); font-style: italic; }
+
+  .section-sub {
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--proteapink);
+    margin-bottom: 22px;
+  }
+
+  .about p { font-size: 16px; color: var(--ink-soft); margin-bottom: 14px; }
+  .about p:first-of-type::first-letter {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 52px;
+    float: left;
+    line-height: 0.9;
+    padding: 4px 8px 0 0;
+    color: var(--ochreglow);
+    font-style: italic;
+  }
+
+  .sa-quote {
+    margin: 20px 0;
+    padding: 16px 20px;
+    border-left: 3px solid var(--proteapink);
+    background: rgba(232, 90, 122, 0.06);
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 18px;
+    color: var(--ink);
+  }
+  .sa-quote .attr {
+    display: block;
+    margin-top: 8px;
+    font-style: normal;
+    font-family: 'Outfit', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+  }
+
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 12px;
+  }
+  .info-card {
+    background: rgba(74, 29, 42, 0.3);
+    border-left: 2px solid var(--ochre);
+    padding: 16px 18px;
+    border-radius: 0 4px 4px 0;
+  }
+  .info-card .k {
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--ochreglow);
+    margin-bottom: 6px;
+  }
+  .info-card .v {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    color: var(--bone);
+  }
+
+  .lineup-search { margin-bottom: 16px; }
+  .lineup-search input,
+  .post-form input,
+  .post-form textarea {
+    width: 100%;
+    background: rgba(26, 13, 31, 0.6);
+    border: 1px solid rgba(242, 168, 90, 0.2);
+    border-radius: 12px;
+    padding: 12px 18px;
+    color: var(--ink);
+    font-family: 'Outfit', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+    resize: vertical;
+  }
+  .lineup-search input { border-radius: 100px; padding: 12px 20px; }
+  .lineup-search input::placeholder,
+  .post-form input::placeholder,
+  .post-form textarea::placeholder { color: var(--ink-dim); }
+  .lineup-search input:focus,
+  .post-form input:focus,
+  .post-form textarea:focus {
+    outline: none;
+    border-color: var(--ochre);
+    box-shadow: 0 0 0 3px rgba(214, 139, 62, 0.15);
+  }
+
+  .lineup-meta {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+    margin-bottom: 14px;
+    text-align: center;
+  }
+  .lineup-meta strong { color: var(--ochreglow); font-weight: 600; }
+
+  .lineup {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 4px;
+    justify-content: center;
+    align-items: baseline;
+    line-height: 1.5;
+  }
+
+  .artist {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: clamp(13px, 3.4vw, 17px);
+    letter-spacing: 0.01em;
+    color: var(--ink);
+    text-decoration: none;
+    padding: 2px 4px;
+    border-radius: 3px;
+    transition: all 0.15s ease;
+    cursor: pointer;
+    display: inline-block;
+  }
+  .artist:hover { color: var(--bg-deep); background: var(--ochreglow); }
+  .artist:nth-child(2n)  { color: var(--ochreglow); }
+  .artist:nth-child(3n)  { color: var(--ink); }
+  .artist:nth-child(5n)  { color: var(--proteaglow); }
+  .artist:nth-child(7n)  { color: var(--ochreglow); }
+  .artist:nth-child(11n) { color: var(--ink-soft); }
+
+  .stages-row { margin-top: 28px; text-align: center; }
+  .stages-row .label {
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+    margin-bottom: 12px;
+  }
+  .stages { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+  .stage-chip {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px;
+    color: var(--bone);
+    padding: 6px 14px;
+    border: 1px solid rgba(214, 139, 62, 0.4);
+    border-radius: 100px;
+    background: rgba(214, 139, 62, 0.06);
+  }
+
+  .tip-card {
+    background: linear-gradient(135deg, rgba(232, 90, 122, 0.08) 0%, rgba(214, 139, 62, 0.06) 100%);
+    border: 1px solid rgba(232, 90, 122, 0.22);
+    border-radius: 4px;
+    padding: 28px 24px;
+  }
+  .tip-card .tip-eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--proteapink);
+    margin-bottom: 14px;
+  }
+  .tip-card .tip-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    color: var(--bone);
+    margin-bottom: 10px;
+    font-style: italic;
+  }
+  .tip-card .tip-body { font-size: 15px; color: var(--ink-soft); }
+  .tip-card .tip-actions { margin-top: 18px; display: flex; gap: 12px; }
+
+  .btn {
+    font-family: 'Outfit', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    background: transparent;
+    border: 1px solid var(--ochre);
+    color: var(--ochreglow);
+    padding: 10px 18px;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: 600;
+  }
+  .btn:hover { background: var(--ochre); color: var(--bg-deep); }
+  .btn:active { transform: scale(0.97); }
+  .btn-primary {
+    background: var(--ochre);
+    color: var(--bg-deep);
+  }
+  .btn-primary:hover { background: var(--ochreglow); color: var(--bg-deep); }
+  .btn-pink {
+    border-color: var(--proteapink);
+    color: var(--proteaglow);
+  }
+  .btn-pink:hover { background: var(--proteapink); color: var(--bg-deep); }
+
+  /* ── POST BOARDS ── */
+  .board-status {
+    display: inline-block;
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+    padding: 4px 10px;
+    border: 1px solid rgba(160, 133, 96, 0.3);
+    border-radius: 100px;
+    margin-bottom: 18px;
+  }
+  .board-status.online { color: var(--proteaglow); border-color: rgba(255, 125, 158, 0.4); }
+  .board-status .pip {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--ink-dim);
+    margin-right: 6px;
+    vertical-align: 1px;
+  }
+  .board-status.online .pip { background: var(--proteaglow); box-shadow: 0 0 8px var(--proteaglow); }
+
+  .post-form {
+    background: rgba(26, 13, 31, 0.5);
+    border: 1px solid rgba(242, 168, 90, 0.15);
+    border-radius: 6px;
+    padding: 18px;
+    margin-bottom: 24px;
+  }
+  .post-form .row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  .post-form input.author { flex: 1; }
+  .post-form textarea { width: 100%; min-height: 70px; margin-bottom: 12px; }
+  .post-form .actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+  }
+  .post-form .char-count {
+    font-size: 11px;
+    color: var(--ink-dim);
+    letter-spacing: 0.05em;
+  }
+  .post-form .char-count.warn { color: var(--proteapink); }
+
+  .posts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .post {
+    background: rgba(74, 29, 42, 0.25);
+    border-left: 2px solid var(--ochre);
+    padding: 14px 16px;
+    border-radius: 0 6px 6px 0;
+    position: relative;
+    animation: postFadeIn 0.4s ease;
+  }
+  .post.open { border-left-color: var(--proteapink); }
+  @keyframes postFadeIn {
+    from { opacity: 0; transform: translateY(-6px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .post-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 6px;
+  }
+  .post-author {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ochreglow);
+  }
+  .post.open .post-author { color: var(--proteaglow); }
+  .post-time {
+    font-size: 10px;
+    color: var(--ink-dim);
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+  }
+  .post-body {
+    font-size: 15px;
+    color: var(--ink-soft);
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+  .post-delete {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: none;
+    border: none;
+    color: var(--ink-dim);
+    cursor: pointer;
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+  .post:hover .post-delete { opacity: 0.6; }
+  .post-delete:hover { opacity: 1 !important; color: var(--proteapink); }
+
+  .empty-board {
+    text-align: center;
+    padding: 30px 20px;
+    color: var(--ink-dim);
+    font-style: italic;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    border: 1px dashed rgba(160, 133, 96, 0.25);
+    border-radius: 6px;
+  }
+
+  /* Checklist */
+  .checklist { list-style: none; }
+  .checklist li {
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(242, 168, 90, 0.1);
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+    font-size: 15px;
+    color: var(--ink-soft);
+  }
+  .checklist li:last-child { border-bottom: none; }
+  .checklist li::before {
+    content: '◯';
+    color: var(--ochre);
+    font-size: 16px;
+    line-height: 1;
+    margin-top: 4px;
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+  }
+  .checklist li.done::before { content: '◉'; color: var(--proteapink); }
+  .checklist li.done {
+    opacity: 0.5;
+    text-decoration: line-through;
+    text-decoration-color: var(--ink-dim);
+  }
+
+  footer {
+    text-align: center;
+    margin-top: 80px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(242, 168, 90, 0.12);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+  }
+  footer a {
+    color: var(--ochreglow);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--ochre);
+  }
+  footer .quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 16px;
+    letter-spacing: 0.05em;
+    text-transform: none;
+    color: var(--ink-soft);
+    margin-bottom: 14px;
+  }
+
+  /* ── MAP ── */
+  .map-wrap {
+    position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid rgba(242, 168, 90, 0.2);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+    margin-bottom: 16px;
+  }
+  .map-wrap iframe {
+    display: block;
+    width: 100%;
+    height: 320px;
+    border: 0;
+    filter: saturate(0.85) contrast(1.05);
+  }
+  .map-overlay {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    background: rgba(26, 13, 31, 0.85);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(242, 168, 90, 0.3);
+    border-radius: 4px;
+    padding: 10px 14px;
+    pointer-events: none;
+  }
+  .map-overlay .ov-k {
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--ochreglow);
+    margin-bottom: 2px;
+  }
+  .map-overlay .ov-v {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    color: var(--bone);
+    line-height: 1.2;
+  }
+  .map-actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+  }
+  .map-link {
+    flex: 1;
+    min-width: 130px;
+    text-align: center;
+    font-family: 'Outfit', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--ochreglow);
+    text-decoration: none;
+    padding: 10px 14px;
+    border: 1px solid rgba(242, 168, 90, 0.3);
+    border-radius: 100px;
+    background: rgba(214, 139, 62, 0.06);
+    transition: all 0.2s ease;
+    font-weight: 600;
+  }
+  .map-link:hover {
+    background: var(--ochre);
+    color: var(--bg-deep);
+    border-color: var(--ochre);
+  }
+  .map-link.pink {
+    color: var(--proteaglow);
+    border-color: rgba(232, 90, 122, 0.3);
+  }
+  .map-link.pink:hover {
+    background: var(--proteapink);
+    color: var(--bg-deep);
+    border-color: var(--proteapink);
+  }
+
+  /* ── FAVORITES ── */
+  .favorites-wrap {
+    background: linear-gradient(135deg, rgba(232, 90, 122, 0.08) 0%, rgba(214, 139, 62, 0.06) 100%);
+    border: 1px solid rgba(232, 90, 122, 0.22);
+    border-radius: 6px;
+    padding: 24px;
+    margin-bottom: 24px;
+  }
+  .favorites-empty {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--ink-dim);
+    font-style: italic;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+  }
+  .favorites-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+  .fav-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(232, 90, 122, 0.15);
+    border: 1px solid rgba(232, 90, 122, 0.3);
+    color: var(--proteaglow);
+    padding: 6px 12px;
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .fav-remove {
+    background: none;
+    border: none;
+    color: var(--proteapink);
+    cursor: pointer;
+    font-size: 14px;
+    padding: 0;
+    line-height: 1;
+    transition: opacity 0.2s ease;
+  }
+  .fav-remove:hover { opacity: 0.6; }
+
+  .fav-count {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+  }
+  .fav-count strong { color: var(--proteaglow); font-weight: 600; }
+
+  .fav-actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .fav-disclaimer {
+    display: flex;
+    gap: 12px;
+    margin-top: 16px;
+    padding: 14px 16px;
+    background: rgba(232, 90, 122, 0.08);
+    border: 1px solid rgba(232, 90, 122, 0.2);
+    border-radius: 6px;
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.5;
+  }
+  .disclaimer-icon {
+    font-size: 18px;
+    flex-shrink: 0;
+    color: var(--proteapink);
+  }
+  .disclaimer-text {
+    flex: 1;
+  }
+  .disclaimer-text strong {
+    color: var(--bone);
+    font-weight: 600;
+  }
+
+  /* Timeline view (stub for schedule data tomorrow) */
+  .timeline {
+    position: relative;
+    padding: 20px 0;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: linear-gradient(180deg, var(--proteapink), transparent);
+  }
+  .timeline-item {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 18px;
+    padding-left: 20px;
+  }
+  .timeline-dot {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    margin-top: 2px;
+    margin-left: -32px;
+    background: var(--proteapink);
+    border: 2px solid var(--bg-deep);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .timeline-content {
+    flex: 1;
+  }
+  .timeline-time {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--bone);
+    margin-bottom: 2px;
+  }
+  .timeline-artist {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ochreglow);
+  }
+  .timeline-stage {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+    margin-top: 4px;
+  }
+
+  /* ── POST BOARDS (removed) ── */
+  .board-status {
+    display: inline-block;
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+    padding: 4px 10px;
+    border: 1px solid rgba(160, 133, 96, 0.3);
+    border-radius: 100px;
+    margin-bottom: 18px;
+  }
+  .board-status.online { color: var(--proteaglow); border-color: rgba(255, 125, 158, 0.4); }
+  .board-status .pip {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--ink-dim);
+    margin-right: 6px;
+    vertical-align: 1px;
+  }
+  .board-status.online .pip { background: var(--proteaglow); box-shadow: 0 0 8px var(--proteaglow); }
+
+  .post-form {
+    background: rgba(26, 13, 31, 0.5);
+    border: 1px solid rgba(242, 168, 90, 0.15);
+    border-radius: 6px;
+    padding: 18px;
+    margin-bottom: 24px;
+  }
+  .post-form .row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  .post-form input.author { flex: 1; }
+  .post-form textarea { width: 100%; min-height: 70px; margin-bottom: 12px; }
+  .post-form .actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+  }
+  .post-form .char-count {
+    font-size: 11px;
+    color: var(--ink-dim);
+    letter-spacing: 0.05em;
+  }
+  .post-form .char-count.warn { color: var(--proteapink); }
+
+  .posts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .post {
+    background: rgba(74, 29, 42, 0.25);
+    border-left: 2px solid var(--ochre);
+    padding: 14px 16px;
+    border-radius: 0 6px 6px 0;
+    position: relative;
+    animation: postFadeIn 0.4s ease;
+  }
+  .post.open { border-left-color: var(--proteapink); }
+  @keyframes postFadeIn {
+    from { opacity: 0; transform: translateY(-6px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .post-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 6px;
+  }
+  .post-author {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ochreglow);
+  }
+  .post.open .post-author { color: var(--proteaglow); }
+  .post-time {
+    font-size: 10px;
+    color: var(--ink-dim);
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+  }
+  .post-body {
+    font-size: 15px;
+    color: var(--ink-soft);
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+  .post-delete {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: none;
+    border: none;
+    color: var(--ink-dim);
+    cursor: pointer;
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+  .post:hover .post-delete { opacity: 0.6; }
+  .post-delete:hover { opacity: 1 !important; color: var(--proteapink); }
+
+  .empty-board {
+    text-align: center;
+    padding: 30px 20px;
+    color: var(--ink-dim);
+    font-style: italic;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    border: 1px dashed rgba(160, 133, 96, 0.25);
+    border-radius: 6px;
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: revealUp 0.9s ease forwards;
+  }
+  @keyframes revealUp { to { opacity: 1; transform: translateY(0); } }
+</style>
+</head>
+<body>
+
+<div class="ember" style="left: 10%; animation-duration: 16s; animation-delay: 0s;"></div>
+<div class="ember" style="left: 25%; animation-duration: 19s; animation-delay: 4s;"></div>
+<div class="ember" style="left: 45%; animation-duration: 17s; animation-delay: 8s;"></div>
+<div class="ember" style="left: 65%; animation-duration: 21s; animation-delay: 2s;"></div>
+<div class="ember" style="left: 80%; animation-duration: 15s; animation-delay: 11s;"></div>
+<div class="ember" style="left: 92%; animation-duration: 18s; animation-delay: 6s;"></div>
+
+<div class="container">
+
+  <!-- Artist Action Modal -->
+  <div class="artist-modal-overlay" id="artist-modal-overlay">
+    <div class="artist-modal">
+      <div class="name" id="modal-artist-name">—</div>
+      <div class="label">What do you want to do?</div>
+      <div class="actions">
+        <button class="btn btn-primary" id="modal-spotify-btn">Open on Spotify</button>
+        <button class="btn btn-pink" id="modal-fav-btn">Add to Favorites</button>
+        <button class="btn" id="modal-close-btn" style="opacity: 0.6;">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <header class="hero reveal">
+    <div class="eyebrow">Abbots Ripton · Cambridgeshire</div>
+    <h1>Origin <em>UK</em><br>2026</h1>
+    <div class="meta">10 Jul <span class="dot">✦</span> 11 Jul <span class="dot">✦</span> 12 Jul</div>
+    <div class="origin-tag"><span class="flag">🇿🇦</span> Born in South Africa</div>
+    <div class="sigil"><span class="sigil-mark">✦</span></div>
+  </header>
+
+  <div class="whatsapp-invite reveal">
+    <a href="https://chat.whatsapp.com/FDd78udHVJsA8fSDKu64G4" target="_blank" rel="noopener" class="whatsapp-btn">
+      <span class="wa-icon">💬</span>
+      <span class="wa-text">Join the tribe on WhatsApp</span>
+      <span class="wa-arrow">→</span>
+    </a>
+  </div>
+
+  <div class="countdown-wrap reveal">
+    <div class="countdown-label">Until the tribes converge</div>
+    <div class="countdown">
+      <div class="unit"><span class="num" id="days">--</span><span class="lbl">Days</span></div>
+      <div class="unit"><span class="num" id="hours">--</span><span class="lbl">Hours</span></div>
+      <div class="unit"><span class="num" id="minutes">--</span><span class="lbl">Minutes</span></div>
+      <div class="unit"><span class="num" id="seconds">--</span><span class="lbl">Seconds</span></div>
+    </div>
+    <div class="countdown-footer" id="cd-footer">Sawubona, festival.</div>
+  </div>
+
+  <section class="about reveal">
+    <h2>From the <em>Cape</em> to Cambridgeshire</h2>
+    <div class="section-sub">A legacy crossing continents</div>
+    <p>Origin Festival has held space in the Western Cape since 2010 — a New Year's gathering on Elandskloof Farm, deep in fynbos country. Now Regan and the Nano Records family bring the Origin stage to UK soil for the first time, in a forest sanctuary near Abbots Ripton.</p>
+    <p>Same ethos, same family, new biome. A weekend-long journey of conscious celebration where the bushveld spirit meets English oak. Expect deep psytrance journeys, twisted techno, dark progressive grooves and a live lounge for the slower moments.</p>
+    <div class="sa-quote">
+      "Uniting the tribes."
+      <span class="attr">— The Origin Way</span>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <h2>The <em>essentials</em></h2>
+    <div class="section-sub">What you need to know</div>
+
+    <div style="text-align: center; margin-bottom: 20px;">
+      <div style="font-family: 'Cormorant Garamond', serif; font-size: 24px; color: var(--bone); margin-bottom: 4px; font-style: italic;">Festival Site</div>
+      <div style="font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ochreglow); margin-bottom: 16px;">Abbots Ripton · PE28 2PF</div>
+    </div>
+
+    <div class="map-actions">
+      <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=PE28+2PF" target="_blank" rel="noopener">Open in Maps</a>
+      <a class="map-link pink" href="https://www.google.com/maps/dir/?api=1&destination=PE28+2PF" target="_blank" rel="noopener">Get Directions</a>
+    </div>
+
+    <div class="info-grid">
+      <div class="info-card"><div class="k">Dates</div><div class="v">10 – 12 July 2026</div></div>
+      <div class="info-card"><div class="k">Origin Family</div><div class="v">Nano Records · SA</div></div>
+      <div class="info-card"><div class="k">Tickets</div><div class="v">From £195 / £20 deposit</div></div>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <h2>The <em>lineup</em></h2>
+    <div class="section-sub">Sounds of the gathering · A → Z</div>
+
+    <div class="lineup-search">
+      <input type="text" id="lineup-filter" placeholder="Find an artist…" />
+    </div>
+    <div class="lineup-meta"><strong id="artist-count">—</strong> artists · tap any name to open on Spotify</div>
+
+    <div class="lineup" id="lineup"></div>
+
+    <div class="stages-row">
+      <div class="label">Stages</div>
+      <div class="stages">
+        <span class="stage-chip">Origin Stage</span>
+        <span class="stage-chip">Alternative Stage</span>
+        <span class="stage-chip">Live Lounge</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <h2>My <em>favorites</em></h2>
+    <div class="section-sub">Artists you don't want to miss · tap to add</div>
+
+    <div class="favorites-wrap">
+      <div class="fav-count"><strong id="fav-count">0</strong> artists saved</div>
+      <div id="favorites-list" class="favorites-list">
+        <div class="favorites-empty">Click any artist name above to add them here</div>
+      </div>
+
+      <div class="fav-actions" id="fav-actions" style="display: none; margin-top: 16px; padding-top: 16px; border-top: 1px solid rgba(232, 90, 122, 0.2); display: flex; gap: 8px; flex-wrap: wrap;">
+        <button class="btn btn-primary" id="export-fav-btn" title="Download your favorites as a file">Export Favorites</button>
+        <button class="btn btn-pink" id="import-fav-btn" title="Upload a previously saved favorites file">Import Favorites</button>
+        <input type="file" id="import-fav-input" accept=".json" style="display: none;">
+      </div>
+
+      <div class="fav-disclaimer">
+        <div class="disclaimer-icon">⚠</div>
+        <div class="disclaimer-text">
+          <strong>Before we release the set times:</strong> Your favorites live on your device. When the new version drops with the schedule, your list will reset. <strong>Export your favorites now</strong>, download the new version, then <strong>import them back</strong> — your DJs will highlight in the timeline. <strong>A notification will be sent when the new version is out.</strong>
+        </div>
+      </div>
+
+      <div id="timeline-stub" class="timeline" style="display:none; margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(232, 90, 122, 0.2);">
+        <div style="font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-dim); margin-bottom: 12px;">Your schedule</div>
+        <div id="timeline" class="timeline"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <h2>Wisdom for the <em>journey</em></h2>
+    <div class="section-sub">A different tip each day</div>
+    <div class="tip-card">
+      <div class="tip-eyebrow" id="tip-day">Tip for today</div>
+      <div class="tip-title" id="tip-title">—</div>
+      <div class="tip-body" id="tip-body">—</div>
+      <div class="tip-actions">
+        <button class="btn" id="tip-new">Another tip</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <h2>SA <em>speak</em></h2>
+    <div class="section-sub">South African slang · lingo · the vibe</div>
+
+    <div class="slang-toggle" id="slang-toggle">
+      <span class="slang-toggle-text">Open the glossary</span>
+      <span class="slang-toggle-icon">▼</span>
+    </div>
+
+    <div class="slang-list" id="slang-list">
+      <div class="slang-item">
+        <div class="slang-word">Howzit</div>
+        <div class="slang-def">Casual greeting. "How are you?" but more relaxed. Response: "Good, hey."</div>
+      </div>
+      <div class="slang-item">
+        <div class="slang-word">Lekker</div>
+        <div class="slang-def">Nice, good, great. "That set was lekker" = that DJ was brilliant.</div>
+      </div>
+      <div class="slang-item">
+        <div class="slang-word">Just now</div>
+        <div class="slang-def">Not immediately. "I'll see you just now" = sometime later, not right now. Can be minutes or hours.</div>
+      </div>
+      <div class="slang-item">
+        <div class="slang-word">Eish</div>
+        <div class="slang-def">Expression of frustration, surprise, or exasperation. "Eish, the tent blew away!"</div>
+      </div>
+      <div class="slang-item">
+        <div class="slang-word">Ag</div>
+        <div class="slang-def">Expression of dismissal or mild frustration. "Ag, it's fine" = don't worry about it.</div>
+      </div>
+      <div class="slang-item">
+        <div class="slang-word">Braai</div>
+        <div class="slang-def">Barbecue. A gathering around a fire with meat and friends. Sacred ritual. "Let's braai tomorrow."</div>
+      </div>
+      <div class="slang-item">
+        <div class="slang-word">Ubuntu</div>
+        <div class="slang-def">"I am because we are." The philosophy of shared humanity. Origin's core ethos.</div>
+      </div>
+      <div class="slang-item">
+        <div class="slang-word">Sawubona</div>
+        <div class="slang-def">Zulu greeting meaning "I see you." Acknowledgment of another's presence and worth.</div>
+      </div>
+      <div class="slang-item">
+        <div class="slang-word">Ayoba</div>
+        <div class="slang-def">That's excellent, awesome, cool. "Your outfit is ayoba!"</div>
+      </div>
+      <div class="slang-item">
+        <div class="slang-word">Shame</div>
+        <div class="slang-def">Not embarrassment — expression of endearment or sympathy. "Shame, you look tired" = I care about you.</div>
+      </div>
+      <div class="slang-item">
+        <div class="slang-word">Jol</div>
+        <div class="slang-def">Party, good time. "We're going to jol this weekend" = we're going to have a great time.</div>
+      </div>
+      <div class="slang-item">
+        <div class="slang-word">Is it</div>
+        <div class="slang-def">Tag question for agreement. "Nice day, is it?" = you agree it's a nice day, yeah?</div>
+      </div>
+      <div class="slang-item">
+        <div class="slang-word">Hectic</div>
+        <div class="slang-def">Intense, crazy, wild. "That rave was hectic" = absolutely mad in the best way.</div>
+      </div>
+      <div class="slang-item">
+        <div class="slang-word">Sho't left</div>
+        <div class="slang-def">Just a moment, wait. "Sho't left, I'm coming" = give me a second.</div>
+      </div>
+      <div class="slang-item">
+        <div class="slang-word">Fynbos</div>
+        <div class="slang-def">Unique Cape vegetation. Where Origin Festival SA was born. The spirit we're bringing north.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <h2>Pre-festival <em>ritual</em></h2>
+    <div class="section-sub">Tap to mark complete</div>
+    <ul class="checklist" id="checklist">
+      <li data-key="ticket">Buy ticket (or set up part-payment plan)</li>
+      <li data-key="travel">Sort travel to Abbots Ripton</li>
+      <li data-key="tent">Check tent + sleeping bag</li>
+      <li data-key="layers">Pack layers — UK nights get cold</li>
+      <li data-key="wellies">Wellies / waterproof boots</li>
+      <li data-key="earplugs">Earplugs (high-fidelity)</li>
+      <li data-key="water">Refillable water bottle</li>
+      <li data-key="torch">Head torch + spare batteries</li>
+      <li data-key="sunscreen">Sunscreen + sun hat</li>
+      <li data-key="cash">Cash for traders</li>
+      <li data-key="firstaid">Mini first aid kit</li>
+    </ul>
+  </section>
+
+  <footer>
+    <div class="quote">"Sawubona — I see you."</div>
+    <div>
+      Built for the wait · <a href="https://originfestival.co.uk" target="_blank" rel="noopener">originfestival.co.uk</a>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+/* ═══════════════════════════════════════════════════════════════════
+   CONFIG — Edit this section tomorrow to wire up the backend
+   ═══════════════════════════════════════════════════════════════════ */
+
+const CONFIG = {
+  // Set to 'local', 'jsonbin', or 'supabase' (tomorrow)
+  backend: 'local',
+
+  // ─── JSONBin setup (tomorrow) ──────────────────────────────
+  // 1. Sign up at jsonbin.io (free)
+  // 2. Create two bins — one for travel posts, one for open posts
+  // 3. Paste your Master Key here and bin IDs below
+  jsonbin: {
+    masterKey: 'PASTE-YOUR-JSONBIN-MASTER-KEY-HERE',
+    binTravel: 'PASTE-BIN-ID-FOR-TRAVEL-HERE',
+    binOpen:   'PASTE-BIN-ID-FOR-OPEN-HERE'
+  },
+
+  // ─── Supabase setup (tomorrow) ─────────────────────────────
+  // 1. Create a project at supabase.com
+  // 2. Make a table 'posts' with: id, board (text), author (text), body (text), created_at (timestamptz)
+  // 3. Enable anon read+insert via Row-Level Security policy
+  // 4. Paste URL + anon public key here
+  supabase: {
+    url:    'https://YOUR-PROJECT.supabase.co',
+    anonKey:'PASTE-YOUR-ANON-PUBLIC-KEY-HERE'
+  }
+};
+
+/* ═══════════════════════════════════════════════════════════════════
+   COUNTDOWN
+   ═══════════════════════════════════════════════════════════════════ */
+
+const target = new Date('2026-07-10T14:00:00+01:00').getTime();
+const $days = document.getElementById('days');
+const $hours = document.getElementById('hours');
+const $minutes = document.getElementById('minutes');
+const $seconds = document.getElementById('seconds');
+const $cdFooter = document.getElementById('cd-footer');
+
+let lastSec = -1;
+const pad = n => String(n).padStart(2, '0');
+
+function flash(el) {
+  el.classList.remove('flash');
+  void el.offsetWidth;
+  el.classList.add('flash');
+}
+
+function tick() {
+  const diff = target - Date.now();
+  if (diff <= 0) {
+    $days.textContent = '00'; $hours.textContent = '00';
+    $minutes.textContent = '00'; $seconds.textContent = '00';
+    $cdFooter.textContent = 'It begins.';
+    return;
+  }
+  const d = Math.floor(diff / 86400000);
+  const h = Math.floor((diff / 3600000) % 24);
+  const m = Math.floor((diff / 60000) % 60);
+  const s = Math.floor((diff / 1000) % 60);
+  $days.textContent = pad(d);
+  $hours.textContent = pad(h);
+  $minutes.textContent = pad(m);
+  $seconds.textContent = pad(s);
+  if (s !== lastSec) { flash($seconds); lastSec = s; }
+}
+tick();
+setInterval(tick, 1000);
+
+/* ═══════════════════════════════════════════════════════════════════
+   LINEUP
+   ═══════════════════════════════════════════════════════════════════ */
+
+const lineup = [
+  "8ternal Beings","Aardvarkk","Aidan Doherty","Ans","Arjuna","Beardy","Big Al","Birdman",
+  "Brodo","Bronson","Burn In Noise","Chewy She","Chop Chop","Circuit Breakers","Dash-M",
+  "Dave The Drummer","Dickster","Digital Hippie","Dirty Saffi","DJ Professor Apple Blossom",
+  "Earthling","Earthly Measures","Eat Static","Ele Luz","Electric Jalaba","E.V.P","Feathers",
+  "Frida Darko","Gaudi","Gurtrude","Haze","Heavy Hertz","Hypnocoustics","Hypogeo",
+  "James Monro","Jaybebaby","Joe Studt","John 00 Fleming","John Monkman","Josh Magill",
+  "Lancier","Laughing Buddha","Lewis","Lily Blue","Lize","Lucas","Lurk","Magik",
+  "Monkey Light","Nanoplex","Neutron","Nick Interchill","Nikki S","Nixiro B2B Alexstatic",
+  "Phobos","Prometheus","Psyperactive","Raxon","Redfreya","Regan + Dala","Rickster",
+  "S.P.OO.N","Sam Strutt","Scorb","Shape Navigator","Shaperz","Sophie Sirota","Sparky","Splink",
+  "System 7","Tarka","Tetrameth","Thad Lester","The Ashen Keys","The Head Gardener",
+  "Tim Horne","Tom Fu","Tongue & Groove","Topaz","Tripswitch","Tristan",
+  "Twisted Sibling","Xpanda"
+];
+
+const $lineup = document.getElementById('lineup');
+const $artistCount = document.getElementById('artist-count');
+const $filter = document.getElementById('lineup-filter');
+
+function spotifyURL(name) {
+  return 'https://open.spotify.com/search/' + encodeURIComponent(name);
+}
+
+function renderLineup(filter = '') {
+  $lineup.innerHTML = '';
+  const f = filter.trim().toLowerCase();
+  let shown = 0;
+  lineup.forEach(name => {
+    if (f && !name.toLowerCase().includes(f)) return;
+    const a = document.createElement('a');
+    a.className = 'artist';
+    a.textContent = name;
+    a.href = '#';
+    a.addEventListener('click', (e) => {
+      e.preventDefault();
+      showArtistModal(name);
+    });
+    $lineup.appendChild(a);
+    shown++;
+  });
+  $artistCount.textContent = shown;
+}
+renderLineup();
+$filter.addEventListener('input', e => renderLineup(e.target.value));
+
+/* ═══════════════════════════════════════════════════════════════════
+   FAVORITES SYSTEM
+   ═══════════════════════════════════════════════════════════════════ */
+
+const $favList = document.getElementById('favorites-list');
+const $favCount = document.getElementById('fav-count');
+const $timelineStub = document.getElementById('timeline-stub');
+const $timeline = document.getElementById('timeline');
+
+// Modal elements
+const $modalOverlay = document.getElementById('artist-modal-overlay');
+const $modalName = document.getElementById('modal-artist-name');
+const $modalSpotifyBtn = document.getElementById('modal-spotify-btn');
+const $modalFavBtn = document.getElementById('modal-fav-btn');
+const $modalCloseBtn = document.getElementById('modal-close-btn');
+
+let currentArtist = null;
+
+function showArtistModal(name) {
+  currentArtist = name;
+  $modalName.textContent = name;
+  $modalSpotifyBtn.href = spotifyURL(name);
+  $modalOverlay.classList.add('show');
+}
+
+function closeArtistModal() {
+  $modalOverlay.classList.remove('show');
+  currentArtist = null;
+}
+
+$modalFavBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  e.stopPropagation();
+  if (currentArtist) {
+    addFavorite(currentArtist);
+    closeArtistModal();
+  }
+});
+
+$modalCloseBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  e.stopPropagation();
+  closeArtistModal();
+});
+
+$modalSpotifyBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  e.stopPropagation();
+  if (currentArtist) {
+    window.open(spotifyURL(currentArtist), '_blank');
+    closeArtistModal();
+  }
+});
+
+$modalOverlay.addEventListener('click', (e) => {
+  if (e.target === $modalOverlay) {
+    closeArtistModal();
+    e.preventDefault();
+  }
+});
+
+// Close modal on Escape key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && $modalOverlay.classList.contains('show')) {
+    closeArtistModal();
+  }
+});
+
+let favorites = [];
+
+function loadFavorites() {
+  try {
+    const stored = localStorage.getItem('origin-uk-favorites');
+    favorites = stored ? JSON.parse(stored) : [];
+  } catch (e) { favorites = []; }
+  renderFavorites();
+}
+
+function saveFavorites() {
+  try {
+    localStorage.setItem('origin-uk-favorites', JSON.stringify(favorites));
+  } catch (e) {}
+}
+
+function addFavorite(name) {
+  if (!favorites.includes(name)) {
+    favorites.push(name);
+    saveFavorites();
+    renderFavorites();
+  }
+}
+
+function removeFavorite(name) {
+  favorites = favorites.filter(n => n !== name);
+  saveFavorites();
+  renderFavorites();
+}
+
+function renderFavorites() {
+  $favCount.textContent = favorites.length;
+  
+  if (!favorites.length) {
+    $favList.innerHTML = '<div class="favorites-empty">Click any artist name above to add them here</div>';
+    $timelineStub.style.display = 'none';
+    document.getElementById('fav-actions').style.display = 'none';
+    return;
+  }
+
+  $favList.innerHTML = '';
+  favorites.forEach(name => {
+    const tag = document.createElement('div');
+    tag.className = 'fav-tag';
+    tag.innerHTML = `
+      ${escapeHtml(name)}
+      <button class="fav-remove" data-name="${escapeHtml(name)}" title="Remove">✕</button>
+    `;
+    tag.querySelector('.fav-remove').addEventListener('click', () => removeFavorite(name));
+    $favList.appendChild(tag);
+  });
+
+  // Show action buttons when there are favorites
+  document.getElementById('fav-actions').style.display = 'flex';
+
+  // Show timeline stub if schedule data exists tomorrow
+  renderTimeline();
+}
+
+function renderTimeline() {
+  // STUB: Tomorrow, when you have schedule data, replace this with real data
+  // For now, just show a placeholder if favorites exist
+  const hasSchedule = false; // Change to true when you add schedule data
+  
+  if (hasSchedule && favorites.length) {
+    $timelineStub.style.display = 'block';
+    // Timeline rendering will go here
+  } else {
+    $timelineStub.style.display = 'none';
+  }
+}
+
+loadFavorites();
+
+/* ═══════════════════════════════════════════════════════════════════
+   EXPORT / IMPORT FAVORITES
+   ═══════════════════════════════════════════════════════════════════ */
+
+const $exportBtn = document.getElementById('export-fav-btn');
+const $importBtn = document.getElementById('import-fav-btn');
+const $importInput = document.getElementById('import-fav-input');
+
+$exportBtn.addEventListener('click', () => {
+  const dataStr = JSON.stringify(favorites, null, 2);
+  const dataBlob = new Blob([dataStr], { type: 'application/json' });
+  const url = URL.createObjectURL(dataBlob);
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = 'my-origin-favorites.json';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+  URL.revokeObjectURL(url);
+});
+
+$importBtn.addEventListener('click', () => {
+  $importInput.click();
+});
+
+$importInput.addEventListener('change', (e) => {
+  const file = e.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = (evt) => {
+    try {
+      const imported = JSON.parse(evt.target.result);
+      if (Array.isArray(imported)) {
+        favorites = imported;
+        saveFavorites();
+        renderFavorites();
+        alert('✓ Favorites imported! You now have ' + favorites.length + ' artists.');
+      } else {
+        alert('❌ Invalid file format. Please use a file exported from Origin.');
+      }
+    } catch (err) {
+      alert('❌ Error reading file: ' + err.message);
+    }
+  };
+  reader.readAsText(file);
+  // Reset input so same file can be imported again
+  $importInput.value = '';
+});
+
+/* ═══════════════════════════════════════════════════════════════════
+   POST BOARDS — backend-agnostic store
+   ═══════════════════════════════════════════════════════════════════ */
+
+const Store = {
+  async getPosts(board) {
+    if (CONFIG.backend === 'jsonbin') return this._jsonbinGet(board);
+    if (CONFIG.backend === 'supabase') return this._supabaseGet(board);
+    return this._localGet(board);
+  },
+  async addPost(board, post) {
+    if (CONFIG.backend === 'jsonbin') return this._jsonbinAdd(board, post);
+    if (CONFIG.backend === 'supabase') return this._supabaseAdd(board, post);
+    return this._localAdd(board, post);
+  },
+  async deletePost(board, id) {
+    if (CONFIG.backend === 'jsonbin') return this._jsonbinDelete(board, id);
+    if (CONFIG.backend === 'supabase') return this._supabaseDelete(board, id);
+    return this._localDelete(board, id);
+  },
+
+  // ── LOCAL ──────────────────────────────────────────────────
+  _key(board) { return 'origin-uk-posts-' + board; },
+  _localGet(board) {
+    try { return JSON.parse(localStorage.getItem(this._key(board)) || '[]'); }
+    catch (e) { return []; }
+  },
+  _localAdd(board, post) {
+    const posts = this._localGet(board);
+    posts.unshift(post);
+    localStorage.setItem(this._key(board), JSON.stringify(posts));
+    return post;
+  },
+  _localDelete(board, id) {
+    const posts = this._localGet(board).filter(p => p.id !== id);
+    localStorage.setItem(this._key(board), JSON.stringify(posts));
+  },
+
+  // ── JSONBIN ─────────────────────────────────────────────────
+  _jsonbinId(board) {
+    return board === 'travel' ? CONFIG.jsonbin.binTravel : CONFIG.jsonbin.binOpen;
+  },
+  async _jsonbinGet(board) {
+    const res = await fetch(`https://api.jsonbin.io/v3/b/${this._jsonbinId(board)}/latest`, {
+      headers: { 'X-Master-Key': CONFIG.jsonbin.masterKey }
+    });
+    const data = await res.json();
+    return (data.record && data.record.posts) || [];
+  },
+  async _jsonbinAdd(board, post) {
+    const posts = await this._jsonbinGet(board);
+    posts.unshift(post);
+    await fetch(`https://api.jsonbin.io/v3/b/${this._jsonbinId(board)}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Master-Key': CONFIG.jsonbin.masterKey
+      },
+      body: JSON.stringify({ posts })
+    });
+    return post;
+  },
+  async _jsonbinDelete(board, id) {
+    const posts = (await this._jsonbinGet(board)).filter(p => p.id !== id);
+    await fetch(`https://api.jsonbin.io/v3/b/${this._jsonbinId(board)}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Master-Key': CONFIG.jsonbin.masterKey
+      },
+      body: JSON.stringify({ posts })
+    });
+  },
+
+  // ── SUPABASE ────────────────────────────────────────────────
+  async _supabaseGet(board) {
+    const res = await fetch(
+      `${CONFIG.supabase.url}/rest/v1/posts?board=eq.${board}&order=created_at.desc`,
+      { headers: {
+          'apikey': CONFIG.supabase.anonKey,
+          'Authorization': 'Bearer ' + CONFIG.supabase.anonKey
+      } }
+    );
+    return await res.json();
+  },
+  async _supabaseAdd(board, post) {
+    const res = await fetch(`${CONFIG.supabase.url}/rest/v1/posts`, {
+      method: 'POST',
+      headers: {
+        'apikey': CONFIG.supabase.anonKey,
+        'Authorization': 'Bearer ' + CONFIG.supabase.anonKey,
+        'Content-Type': 'application/json',
+        'Prefer': 'return=representation'
+      },
+      body: JSON.stringify({ board, author: post.author, body: post.body })
+    });
+    return (await res.json())[0];
+  },
+  async _supabaseDelete(board, id) {
+    await fetch(`${CONFIG.supabase.url}/rest/v1/posts?id=eq.${id}`, {
+      method: 'DELETE',
+      headers: {
+        'apikey': CONFIG.supabase.anonKey,
+        'Authorization': 'Bearer ' + CONFIG.supabase.anonKey
+      }
+    });
+  }
+};
+
+/* ═══════════════════════════════════════════════════════════════════
+   BOARD UI
+   ═══════════════════════════════════════════════════════════════════ */
+
+function formatTime(ts) {
+  const d = new Date(ts);
+  const now = new Date();
+  const diff = now - d;
+  if (diff < 60000) return 'just now';
+  if (diff < 3600000) return Math.floor(diff / 60000) + 'm ago';
+  if (diff < 86400000) return Math.floor(diff / 3600000) + 'h ago';
+  if (diff < 604800000) return Math.floor(diff / 86400000) + 'd ago';
+  return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+}
+
+function makeBoard(board, emptyMsg, openStyle) {
+  const $form     = document.getElementById('form-' + board);
+  const $author   = document.getElementById('author-' + board);
+  const $body     = document.getElementById('body-' + board);
+  const $count    = document.getElementById('count-' + board);
+  const $posts    = document.getElementById('posts-' + board);
+  const $status   = document.getElementById('status-' + board);
+
+  // Status pip
+  if (CONFIG.backend !== 'local') {
+    $status.classList.add('online');
+    $status.innerHTML = '<span class="pip"></span>Live · ' + CONFIG.backend;
+  }
+
+  // Remember author name locally
+  try {
+    const savedAuthor = localStorage.getItem('origin-uk-author');
+    if (savedAuthor) $author.value = savedAuthor;
+  } catch (e) {}
+
+  $body.addEventListener('input', () => {
+    const len = $body.value.length;
+    $count.textContent = len + ' / 500';
+    $count.classList.toggle('warn', len > 450);
+  });
+
+  async function render() {
+    try {
+      const posts = await Store.getPosts(board);
+      if (!posts.length) {
+        $posts.innerHTML = `<div class="empty-board">${emptyMsg}</div>`;
+        return;
+      }
+      $posts.innerHTML = '';
+      posts.forEach(p => {
+        const ts = p.created_at || p.ts || Date.now();
+        const div = document.createElement('div');
+        div.className = 'post' + (openStyle ? ' open' : '');
+        div.innerHTML = `
+          <div class="post-head">
+            <span class="post-author">${escapeHtml(p.author || 'Anon')}</span>
+            <span class="post-time">${formatTime(ts)}</span>
+          </div>
+          <div class="post-body">${escapeHtml(p.body)}</div>
+          <button class="post-delete" data-id="${p.id}" title="Delete">✕</button>
+        `;
+        div.querySelector('.post-delete').addEventListener('click', async () => {
+          if (!confirm('Delete this post?')) return;
+          await Store.deletePost(board, p.id);
+          render();
+        });
+        $posts.appendChild(div);
+      });
+    } catch (err) {
+      console.error('Board render failed:', err);
+      $posts.innerHTML = `<div class="empty-board">Couldn't load posts. Check the backend config.</div>`;
+    }
+  }
+
+  $form.addEventListener('submit', async e => {
+    e.preventDefault();
+    const author = $author.value.trim() || 'Anon';
+    const body   = $body.value.trim();
+    if (!body) return;
+    const post = {
+      id: Date.now().toString(36) + Math.random().toString(36).slice(2, 7),
+      author, body,
+      created_at: new Date().toISOString()
+    };
+    try { localStorage.setItem('origin-uk-author', author); } catch (e) {}
+    $body.value = '';
+    $count.textContent = '0 / 500';
+    $count.classList.remove('warn');
+    await Store.addPost(board, post);
+    render();
+  });
+
+  render();
+}
+
+function escapeHtml(s) {
+  return String(s)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;').replace(/'/g, '&#039;');
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   DAILY TIP
+   ═══════════════════════════════════════════════════════════════════ */
+
+const tips = [
+  { t: "Hydrate before you arrive", b: "Start drinking water the day before. You can't catch up once you're already dancing in a dust cloud." },
+  { t: "Layer like a forest creature", b: "Cambridgeshire nights in July still drop low. Pack a hoodie, beanie, and something for rain — even if the forecast lies." },
+  { t: "Wellies, not festival fashion", b: "Origin is in a field. After day one of foot traffic and a single shower it's a different field. Waterproof footwear is non-negotiable." },
+  { t: "High-fidelity earplugs", b: "Loop, Alpine, EarPeace — pick a pair. You'll hear the music better and still have working ears on Monday." },
+  { t: "Eat real food, not just chips", b: "Get one proper meal a day with vegetables and protein. Three days of festival chips is how a great weekend turns into a flu." },
+  { t: "Find welfare before you need it", b: "Walk past PsyCare or the welfare crew when you arrive sober. Knowing exactly where it is matters when you're not." },
+  { t: "Phone discipline", b: "Battery pack, lock screen photo of your tent location, and a meeting spot pact with your crew for when signal dies." },
+  { t: "Earplugs for sleep too", b: "The bass doesn't stop at 4am. Foam plugs for the tent, hi-fi plugs for the dance floor." },
+  { t: "Suncream isn't optional in a UK field", b: "It burns harder than you'd think when you're spinning poi at midday. SPF 30 minimum." },
+  { t: "Cash for the traders", b: "Card readers fail in fields. Pull £100-ish out before you arrive — it goes further than you expect." },
+  { t: "Pace, don't peak on day one", b: "Big Friday nights kill Sunday mornings. The best sets are often Sunday night — save something." },
+  { t: "Make a meet-back plan", b: "Agree a spot and a time with your crew before signal drops. Origin Stage entrance, on the hour, every hour." },
+  { t: "Bring a tarp", b: "Cheap blue tarp = floor of your communal space, rain shelter, sit-mat, emergency tent repair. Worth its weight in gold." },
+  { t: "Wet wipes", b: "Showers will be queued or non-existent. A daily wet-wipe routine keeps you human." },
+  { t: "Mark your tent", b: "A flag, a flower, something visible. At 3am every nylon dome looks identical." },
+  { t: "Bring something to share", b: "Tea, sweets, fruit, a deck of cards. The best conversations come from the small offerings." },
+  { t: "Eat breakfast", b: "Even when you don't want to. Porridge oats + water in a tin cup is the cheat code." },
+  { t: "Know overheating symptoms", b: "If you stop sweating, get dizzy, or feel cold in heat — sit in shade, sip water slowly, find welfare. Don't push through." },
+  { t: "Don't drive in tired", b: "Arrive rested or arrive late. Festival weekends start with the journey." },
+  { t: "Leave Monday clear", b: "Don't book anything for the day after. A real recovery day is the difference between fond memories and a wrecked week." },
+  { t: "Greet the land", b: "Origin in SA opens with a moment of acknowledgement. Take your own pause when you arrive — phone away, feet on the ground." }
+];
+
+const $tipDay = document.getElementById('tip-day');
+const $tipTitle = document.getElementById('tip-title');
+const $tipBody = document.getElementById('tip-body');
+const $tipBtn = document.getElementById('tip-new');
+
+function dayOfYear() {
+  const d = new Date();
+  const start = new Date(d.getFullYear(), 0, 0);
+  return Math.floor((d - start) / 86400000);
+}
+
+function showTip(idx) {
+  const tip = tips[((idx % tips.length) + tips.length) % tips.length];
+  $tipTitle.textContent = tip.t;
+  $tipBody.textContent = tip.b;
+}
+
+let tipIdx = dayOfYear();
+showTip(tipIdx);
+
+$tipBtn.addEventListener('click', () => {
+  tipIdx = Math.floor(Math.random() * tips.length);
+  $tipDay.textContent = 'Random tip';
+  showTip(tipIdx);
+});
+
+/* ═══════════════════════════════════════════════════════════════════
+   CHECKLIST
+   ═══════════════════════════════════════════════════════════════════ */
+
+document.querySelectorAll('#checklist li').forEach(li => {
+  const key = li.dataset.key;
+  try {
+    if (localStorage.getItem('origin-uk-check-' + key) === '1') li.classList.add('done');
+  } catch (e) {}
+  li.addEventListener('click', () => {
+    li.classList.toggle('done');
+    const isDone = li.classList.contains('done');
+    try {
+      if (isDone) localStorage.setItem('origin-uk-check-' + key, '1');
+      else        localStorage.removeItem('origin-uk-check-' + key);
+    } catch (e) {}
+  });
+});
+
+/* Stagger reveal animations */
+document.querySelectorAll('.reveal').forEach((el, i) => {
+  el.style.animationDelay = (0.1 + i * 0.08) + 's';
+});
+
+/* ═══════════════════════════════════════════════════════════════════
+   SA SLANG TOGGLE
+   ═══════════════════════════════════════════════════════════════════ */
+
+const $slangToggle = document.getElementById('slang-toggle');
+const $slangList = document.getElementById('slang-list');
+
+$slangToggle.addEventListener('click', () => {
+  $slangToggle.classList.toggle('open');
+  $slangList.classList.toggle('open');
+});
+</script>
+
+</body>
+</html>
